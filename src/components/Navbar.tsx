@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Waves } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -22,8 +22,7 @@ const Navbar = () => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Blog', href: '/blog' },
+    { name: 'Insights', href: '/insights' },
     { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
   ]
@@ -32,39 +31,35 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-slate-800/80 bg-slate-950/85 backdrop-blur-md transition-all duration-300 ${
         scrolled 
-          ? 'bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-slate-800' 
-          : 'bg-transparent'
+          ? 'bg-slate-900/95 shadow-lg'
+          : ''
       }`}
     >
-      <div className="container-custom">
-        <div className="flex items-center justify-between h-16 md:h-20">
+      <div className="w-full px-[18px] sm:px-6 lg:px-8">
+        <div className="flex h-[77px] items-center justify-between md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
+          <Link href="/" className="group flex shrink-0 items-center gap-3.5" aria-label="GreekWave Technologies home">
             <motion.div
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.3 }}
-              className="relative"
+              className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-[#0a2540] ring-1 ring-cyan-400/30"
             >
               <Image
                 src="/logo.png"
                 alt="GreekWave Technologies"
-                width={40}
-                height={40}
-                className="w-10 h-10"
-              />
-              <motion.div
-                className="absolute inset-0 rounded-full bg-cyan-400/20"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
+                width={56}
+                height={56}
+                className="h-full w-full object-contain"
+                priority
               />
             </motion.div>
-            <div className="flex flex-col">
-              <span className="text-xl font-bold font-poppins gradient-text">
+            <div className="flex h-14 flex-col justify-center leading-none">
+              <span className="font-poppins text-2xl font-bold leading-none gradient-text">
                 GreekWave
               </span>
-              <span className="text-xs text-gray-400 -mt-1">Technologies</span>
+              <span className="mt-1 text-xs font-medium leading-none text-gray-300">Technologies</span>
             </div>
           </Link>
 

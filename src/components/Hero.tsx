@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, Play, Sparkles } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import ParticleBackground from './ParticleBackground'
 
 const Hero = () => {
@@ -19,48 +19,32 @@ const Hero = () => {
 
       <div className="container-custom relative z-10">
         <div className="text-center max-w-5xl mx-auto">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center space-x-2 bg-slate-800/50 backdrop-blur-sm border border-cyan-400/30 rounded-full px-6 py-3 mb-8"
-          >
-            <Sparkles className="h-4 w-4 text-cyan-400" />
-            <span className="text-sm font-medium text-cyan-400">
-              AI Innovation at Its Finest
-            </span>
-          </motion.div>
-
           {/* Main Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8 }}
             className="text-hero mb-6"
           >
-            <span className="block">Riding the</span>
-            <span className="block gradient-text wave-animation">
-              Wave of AI
-            </span>
-            <span className="block">Innovation</span>
+            <span className="block">Building Intelligent Products.</span>
+            <span className="block gradient-text">Automating the Future.</span>
           </motion.h1>
 
           {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            GreekWave Technologies builds innovative AI-based applications that transform businesses and empower consumers with cutting-edge solutions in computer vision, NLP, and automation.
+            We build innovative SaaS products and AI-powered automation solutions that help businesses simplify operations, improve productivity, and scale with confidence.
           </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
           >
             <motion.div
@@ -68,10 +52,10 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Link
-                href="/contact"
+                href="/services"
                 className="btn-primary inline-flex items-center space-x-2 text-lg px-10 py-4"
               >
-                <span>Get Started</span>
+                <span>Explore Our Products</span>
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </motion.div>
@@ -80,10 +64,9 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <button className="btn-secondary inline-flex items-center space-x-2 text-lg px-10 py-4">
-                <Play className="h-5 w-5" />
-                <span>Watch Demo</span>
-              </button>
+              <Link href="/contact" className="btn-secondary inline-flex items-center space-x-2 text-lg px-10 py-4">
+                <span>Let&apos;s Work Together</span>
+              </Link>
             </motion.div>
           </motion.div>
 
@@ -91,19 +74,19 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20"
           >
             {[
-              { number: '100+', label: 'AI Projects Delivered' },
-              { number: '50+', label: 'Happy Clients' },
+              { number: '10+', label: 'AI Projects Delivered' },
+              { number: '8', label: 'Happy Clients' },
               { number: '99%', label: 'Success Rate' },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
+                transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                 className="text-center"
               >
                 <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">

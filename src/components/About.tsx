@@ -2,28 +2,29 @@
 
 import { motion } from 'framer-motion'
 import { Target, Eye, Users, Award } from 'lucide-react'
+import Link from 'next/link'
 
 const About = () => {
   const values = [
     {
       icon: Target,
       title: 'Mission',
-      description: 'To democratize AI technology and make it accessible to businesses of all sizes, driving innovation and growth through intelligent solutions.',
+      description: 'To build accessible, intelligent software and AI-powered solutions that simplify business operations and empower organizations to achieve more.',
     },
     {
       icon: Eye,
       title: 'Vision',
-      description: 'To be the leading AI technology partner that transforms industries and creates a smarter, more connected world.',
+      description: 'To become a trusted technology company known for creating impactful SaaS products and intelligent automations that shape a smarter digital future.',
     },
     {
       icon: Users,
       title: 'Values',
-      description: 'Innovation, integrity, collaboration, and excellence guide everything we do as we build the future of AI.',
+      description: 'Innovation, integrity, customer-centric thinking, collaboration, and continuous improvement guide everything we build.',
     },
     {
       icon: Award,
       title: 'Excellence',
-      description: 'We strive for perfection in every project, delivering solutions that exceed expectations and drive real results.',
+      description: 'We prioritize quality, reliability, security, and thoughtful design to create dependable solutions that deliver meaningful value.',
     },
   ]
 
@@ -49,30 +50,25 @@ const About = () => {
             </motion.div>
 
             <h2 className="text-section-title mb-6">
-              Pioneering the Future of
-              <span className="gradient-text block">Artificial Intelligence</span>
+              Building the Future of
+              <span className="gradient-text block">Intelligent Software</span>
             </h2>
 
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              Founded with a vision to harness the transformative power of AI, GreekWave Technologies 
-              has emerged as a trusted partner for businesses seeking to leverage cutting-edge artificial 
-              intelligence solutions. Our team of expert engineers, data scientists, and AI researchers 
-              work tirelessly to create innovative applications that solve real-world problems.
+              GreekWave Technologies is a technology company focused on building innovative SaaS products and AI-powered automation solutions that solve real-world business challenges. We turn ideas into practical, scalable software that helps businesses work smarter, operate efficiently, and grow confidently.
             </p>
 
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              From computer vision systems that revolutionize manufacturing processes to natural language 
-              processing tools that enhance customer experiences, we're committed to delivering AI solutions 
-              that drive measurable business outcomes and create lasting value.
+              From purpose-built platforms like BioeLve for clinics and diagnostic centers to intelligent automations that simplify everyday workflows, we create technology designed around real business needs. Our goal is to make powerful software and AI accessible, useful, and impactful for businesses of all sizes.
             </p>
 
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <button className="btn-primary">
-                Learn More About Us
-              </button>
+              <Link href="/services" className="btn-primary inline-flex items-center">
+                Discover Our Products →
+              </Link>
             </motion.div>
           </motion.div>
 
@@ -108,36 +104,6 @@ const About = () => {
             ))}
           </motion.div>
         </div>
-
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
-        >
-          {[
-            { number: '5+', label: 'Years Experience' },
-            { number: '100+', label: 'Projects Completed' },
-            { number: '50+', label: 'Happy Clients' },
-            { number: '24/7', label: 'Support Available' },
-          ].map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
-                {stat.number}
-              </div>
-              <div className="text-gray-400 font-medium">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   )

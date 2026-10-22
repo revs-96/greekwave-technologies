@@ -1,218 +1,48 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Star, Quote } from 'lucide-react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { FileText, Quote, Star, TrendingUp, Users } from 'lucide-react'
 
-const Testimonials = () => {
-  const testimonials = [
-    {
-      id: 1,
-      name: 'Sarah Johnson',
-      position: 'CTO',
-      company: 'TechCorp Industries',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face',
-      content: 'GreekWave Technologies transformed our manufacturing process with their AI-powered quality control system. The results exceeded our expectations, reducing defects by 85% and saving us millions in operational costs.',
-      rating: 5,
-    },
-    {
-      id: 2,
-      name: 'Michael Chen',
-      position: 'Head of Operations',
-      company: 'RetailMax Solutions',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
-      content: 'The chatbot solution they developed has revolutionized our customer service. We now handle 90% of inquiries automatically while maintaining a 95% customer satisfaction rate. Absolutely incredible work!',
-      rating: 5,
-    },
-    {
-      id: 3,
-      name: 'Emily Rodriguez',
-      position: 'VP of Engineering',
-      company: 'Energy Solutions Inc.',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
-      content: 'Their predictive maintenance system has been a game-changer for our operations. We\'ve reduced equipment downtime by 60% and saved over $2 million in maintenance costs. The ROI has been phenomenal.',
-      rating: 5,
-    },
-    {
-      id: 4,
-      name: 'David Thompson',
-      position: 'CEO',
-      company: 'InnovateTech',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
-      content: 'Working with GreekWave has been an exceptional experience. Their team\'s expertise in AI and machine learning is unmatched, and they delivered a solution that perfectly aligned with our business goals.',
-      rating: 5,
-    },
-    {
-      id: 5,
-      name: 'Lisa Wang',
-      position: 'Director of Innovation',
-      company: 'FutureCorp',
-      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face',
-      content: 'The AI integration they provided has streamlined our entire workflow. The team was professional, responsive, and delivered exactly what they promised. I highly recommend their services.',
-      rating: 5,
-    },
-    {
-      id: 6,
-      name: 'Robert Kim',
-      position: 'Chief Data Officer',
-      company: 'DataDriven Inc.',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face',
-      content: 'GreekWave\'s predictive analytics solution has given us insights we never thought possible. Their approach to machine learning is sophisticated yet practical, delivering real business value.',
-      rating: 5,
-    },
-  ]
+const testimonials = [
+  { industry: 'Healthcare', accent: 'bg-blue-500/20 text-blue-300', name: 'Dr. Priya Nair', position: 'Medical Director', company: 'Sri Sai Diagnostics', portrait: '/testimonials/priya.png', logo: '/testimonials/sri-sai.png', text: 'BioeLve has made a huge difference in our daily operations. Appointment scheduling, patient records and diagnostic workflows are now streamlined and easy to manage. The team was responsive and understood our needs from the beginning.' },
+  { industry: 'Education & EdTech', accent: 'bg-blue-500/20 text-blue-300', name: 'Rohit Sharma', position: 'Principal', company: 'Green Valley Public School', portrait: '/testimonials/rohit.png', logo: '/testimonials/green-valley.png', text: 'The platform has simplified our student management and reduced a lot of manual work. Our teachers and students find it easy to use, and the support team is always helpful.' },
+  { industry: 'Finance & Accounting', accent: 'bg-violet-500/20 text-violet-300', name: 'Anjali Mehta', position: 'Senior Accountant', company: 'Vardhan & Co.', portrait: '/testimonials/anjali.png', logo: '/testimonials/vardhan.png', text: 'The automation solution helped us process invoices and documents much faster. It reduced errors and saved our team a lot of time. The implementation was smooth and well structured.' },
+  { industry: 'Food & Hospitality', accent: 'bg-orange-500/20 text-orange-300', name: 'Karthik Reddy', position: 'Operations Manager', company: 'Spice Route Restaurant', portrait: '/testimonials/karthik.png', logo: '/testimonials/spice-route.png', text: 'The restaurant management system has helped us handle orders, inventory and staff schedules more efficiently. It’s simple to use and fits well with our daily operations.' },
+  { industry: 'E-commerce', accent: 'bg-emerald-500/20 text-emerald-300', name: 'Sneha Iyer', position: 'Founder & CEO', company: 'UrbanCart', portrait: '/testimonials/sneha.png', logo: '/testimonials/urbancart.png', text: 'The AI-powered support assistant has improved our customer response time and reduced repetitive queries. It’s been a great addition to our support team.' },
+  { industry: 'Agentic AI / Automation', accent: 'bg-cyan-500/20 text-cyan-300', name: 'Arun Patel', position: 'IT Head', company: 'NextGen Manufacturing', portrait: '/testimonials/arun.png', logo: '/testimonials/nextgen.png', text: 'The agentic AI solution has helped us automate complex workflows across multiple systems. It understands our process well and takes the right actions, reducing manual effort significantly.' },
+]
 
-  return (
-    <section id="testimonials" className="section-padding bg-slate-900">
-      <div className="container-custom">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="inline-block bg-cyan-400/10 border border-cyan-400/30 rounded-full px-4 py-2 mb-6"
-          >
-            <span className="text-cyan-400 font-medium">Testimonials</span>
-          </motion.div>
+const Testimonials = () => (
+  <section id="testimonials" className="section-padding bg-[#0B1426]">
+    <div className="container-custom">
+      <motion.header initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="mx-auto mb-16 max-w-4xl text-center">
+        <div className="mb-6 inline-block rounded-full border border-cyan-400/60 bg-cyan-400/5 px-5 py-2"><span className="font-medium text-cyan-300">Testimonials</span></div>
+        <h2 className="text-section-title mb-6">What Our Clients<span className="gradient-text block">Say About Us</span></h2>
+        <p className="text-xl leading-relaxed text-[#B9C8DF]">Real feedback from businesses we&apos;ve worked with. See how our SaaS products and AI-powered solutions are helping organizations achieve their goals.</p>
+      </motion.header>
 
-          <h2 className="text-section-title mb-6">
-            What Our Clients
-            <span className="gradient-text block">Say About Us</span>
-          </h2>
-
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Don't just take our word for it. Here's what industry leaders have to say about 
-            their experience working with GreekWave Technologies.
-          </p>
-        </motion.div>
-
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="group"
-            >
-              <div className="card h-full hover:scale-105 transition-all duration-300 relative overflow-hidden">
-                {/* Quote Icon */}
-                <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <Quote className="h-12 w-12 text-cyan-400" />
-                </div>
-
-                {/* Rating */}
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-5 w-5 text-yellow-400 fill-current"
-                    />
-                  ))}
-                </div>
-
-                {/* Content */}
-                <blockquote className="text-gray-300 mb-6 leading-relaxed relative z-10">
-                  "{testimonial.content}"
-                </blockquote>
-
-                {/* Author */}
-                <div className="flex items-center space-x-4">
-                  <div className="relative">
-                    <Image
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      width={60}
-                      height={60}
-                      className="rounded-full object-cover"
-                    />
-                    <div className="absolute inset-0 rounded-full ring-2 ring-cyan-400/30 group-hover:ring-cyan-400/60 transition-all" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-white">
-                      {testimonial.name}
-                    </div>
-                    <div className="text-sm text-gray-400">
-                      {testimonial.position}
-                    </div>
-                    <div className="text-sm text-cyan-400">
-                      {testimonial.company}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-8"
-        >
-          {[
-            { number: '98%', label: 'Client Satisfaction' },
-            { number: '50+', label: 'Happy Clients' },
-            { number: '100+', label: 'Projects Delivered' },
-            { number: '24/7', label: 'Support Available' },
-          ].map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="text-center p-6 bg-slate-800/30 rounded-xl border border-slate-700 hover:border-cyan-400/30 transition-colors"
-            >
-              <div className="text-4xl font-bold gradient-text mb-2">
-                {stat.number}
-              </div>
-              <div className="text-gray-400 font-medium">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-cyan-400/10 to-blue-500/10 border border-cyan-400/30 rounded-2xl p-8 md:p-12">
-            <h3 className="text-3xl font-bold mb-4">
-              Join Our Growing List of Satisfied Clients
-            </h3>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Experience the same level of excellence and innovation that our clients rave about.
-            </p>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <button className="btn-primary text-lg px-10 py-4">
-                Get Your Free Consultation
-              </button>
-            </motion.div>
-          </div>
-        </motion.div>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {testimonials.map((testimonial, index) => (
+          <motion.article key={testimonial.name} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.45, delay: index * 0.06 }} viewport={{ once: true }} className="flex min-h-[340px] flex-col rounded-xl border border-[#164875] bg-[#0D1B31] p-6 shadow-[0_0_24px_rgba(34,211,238,0.04)] transition-colors hover:border-cyan-400/60">
+            <div className="mb-4 flex items-start justify-between gap-4"><Quote aria-hidden="true" className="h-8 w-8 shrink-0 fill-cyan-400 text-cyan-400" /><span className={`rounded-full px-3 py-1 text-xs font-medium ${testimonial.accent}`}>{testimonial.industry}</span></div>
+            <blockquote className="mb-5 flex-1 leading-relaxed text-[#D5E3F8]">{testimonial.text}</blockquote>
+            <div className="mb-4 flex" aria-label="5 out of 5 stars">{Array.from({ length: 5 }, (_, star) => <Star key={star} className="h-5 w-5 fill-amber-400 text-amber-400" />)}</div>
+            <div className="flex items-center justify-between gap-3 border-t border-[#164875] pt-4">
+              <div className="flex min-w-0 items-center gap-3"><Image src={testimonial.portrait} alt={testimonial.name} width={62} height={62} className="h-[62px] w-[62px] shrink-0 rounded-full border border-cyan-400/60 object-cover" /><div className="min-w-0"><p className="font-semibold text-white">{testimonial.name}</p><p className="text-sm text-[#8EBAF4]">{testimonial.position}</p><p className="text-sm text-[#D5E3F8]">{testimonial.company}</p></div></div>
+              <Image src={testimonial.logo} alt={`${testimonial.company} logo`} width={100} height={64} className="max-h-14 w-auto max-w-[92px] object-contain" />
+            </div>
+          </motion.article>
+        ))}
       </div>
-    </section>
-  )
-}
+
+      <motion.div initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="mt-8 grid overflow-hidden rounded-2xl border border-[#164875] bg-[#0D1B31] md:grid-cols-3">
+        <div className="flex items-center gap-5 p-7 md:border-r md:border-[#164875]"><div className="rounded-xl bg-cyan-400/10 p-4"><FileText className="h-8 w-8 text-cyan-400" /></div><div><p className="text-4xl font-bold text-cyan-400">10+</p><p className="text-lg text-[#B9C8DF]">Projects Delivered</p></div></div>
+        <div className="flex items-center gap-5 p-7 md:border-r md:border-[#164875]"><div className="rounded-xl bg-cyan-400/10 p-4"><Users className="h-8 w-8 text-cyan-400" /></div><div><p className="text-4xl font-bold text-cyan-400">8</p><p className="text-lg text-[#B9C8DF]">Happy Clients</p></div></div>
+        <div className="flex items-center gap-5 p-7"><div className="rounded-xl bg-cyan-400/10 p-4"><TrendingUp className="h-8 w-8 text-cyan-400" /></div><p className="max-w-xs leading-relaxed text-[#B9C8DF]">Building long-term partnerships through innovation, trust and measurable results.</p></div>
+      </motion.div>
+    </div>
+  </section>
+)
 
 export default Testimonials

@@ -22,8 +22,7 @@ const Footer = () => {
       { name: 'AI Consulting', href: '/services/consulting' },
     ],
     resources: [
-      { name: 'Blog', href: '/blog' },
-      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Insights', href: '/insights' },
       { name: 'Documentation', href: '/docs' },
       { name: 'API Reference', href: '/api' },
       { name: 'Support Center', href: '/support' },

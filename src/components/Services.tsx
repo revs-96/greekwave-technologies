@@ -1,51 +1,55 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Eye, MessageSquare, TrendingUp, Cog, Brain, Zap } from 'lucide-react'
+import { BookOpen, Heart, Landmark, ShoppingCart, Utensils } from 'lucide-react'
+import Link from 'next/link'
 
 const Services = () => {
   const services = [
     {
-      icon: Eye,
-      title: 'Computer Vision',
-      description: 'Advanced image and video analysis solutions for object detection, facial recognition, and quality control systems.',
-      features: ['Object Detection', 'Image Classification', 'Facial Recognition', 'Quality Control'],
+      icon: Heart,
+      title: 'Healthcare & Medical',
+      description: 'Purpose-built healthcare software to help clinics and diagnostic centers manage daily operations efficiently.',
+      features: ['Clinic Management Systems', 'Diagnostic Center Workflows', 'Appointments & Patient Records', 'Healthcare Workflow Automation'],
+      color: 'from-pink-500 to-rose-500',
+      cta: 'Explore BioeLve',
+      href: '/services#healthcare-medical',
+    },
+    {
+      icon: BookOpen,
+      title: 'Education & EdTech',
+      description: 'Digital platforms that simplify educational administration and enhance learning experiences.',
+      features: ['Student & Course Management', 'Learning Management Systems', 'Administrative Automation', 'AI Learning Assistants'],
       color: 'from-blue-500 to-cyan-500',
+      cta: 'Learn More',
+      href: '/services#education-edtech',
     },
     {
-      icon: MessageSquare,
-      title: 'Natural Language Processing',
-      description: 'Intelligent text analysis, chatbots, and language understanding systems that enhance customer interactions.',
-      features: ['Sentiment Analysis', 'Chatbots', 'Text Classification', 'Language Translation'],
-      color: 'from-purple-500 to-pink-500',
+      icon: Utensils,
+      title: 'Food, Restaurants & Hospitality',
+      description: 'Smart software to streamline hospitality operations and improve customer service.',
+      features: ['Restaurant Management', 'Reservations & Order Workflows', 'Inventory & Staff Management', 'Customer Service Automation'],
+      color: 'from-orange-500 to-amber-500',
+      cta: 'Learn More',
+      href: '/services#food-hospitality',
     },
     {
-      icon: TrendingUp,
-      title: 'Predictive Analytics',
-      description: 'Data-driven insights and forecasting models that help businesses make informed decisions and optimize operations.',
-      features: ['Demand Forecasting', 'Risk Assessment', 'Customer Analytics', 'Market Trends'],
-      color: 'from-green-500 to-emerald-500',
+      icon: ShoppingCart,
+      title: 'E-commerce & Digital Platforms',
+      description: 'Scalable digital solutions that simplify online selling and automate everyday operations.',
+      features: ['E-commerce Platform Development', 'Order & Inventory Management', 'AI Customer Support', 'Sales & Business Analytics'],
+      color: 'from-emerald-500 to-teal-500',
+      cta: 'Learn More',
+      href: '/services#ecommerce-platforms',
     },
     {
-      icon: Cog,
-      title: 'Automation Systems',
-      description: 'Intelligent automation solutions that streamline workflows and increase operational efficiency across industries.',
-      features: ['Process Automation', 'Workflow Optimization', 'Smart Scheduling', 'Resource Management'],
-      color: 'from-orange-500 to-red-500',
-    },
-    {
-      icon: Brain,
-      title: 'Machine Learning',
-      description: 'Custom ML models and algorithms tailored to your specific business needs and data requirements.',
-      features: ['Custom Models', 'Deep Learning', 'Neural Networks', 'Algorithm Development'],
-      color: 'from-indigo-500 to-purple-500',
-    },
-    {
-      icon: Zap,
-      title: 'AI Integration',
-      description: 'Seamless integration of AI capabilities into existing systems and applications for enhanced functionality.',
-      features: ['API Integration', 'System Migration', 'Cloud Deployment', 'Performance Optimization'],
-      color: 'from-yellow-500 to-orange-500',
+      icon: Landmark,
+      title: 'Finance, Accounting & Insurance',
+      description: 'Intelligent tools that simplify financial workflows, document handling, and business reporting.',
+      features: ['Accounting Workflow Automation', 'Invoice & Document Processing', 'Financial Reports & Dashboards', 'Insurance Process Automation'],
+      color: 'from-violet-500 to-purple-500',
+      cta: 'Learn More',
+      href: '/services#finance-insurance',
     },
   ]
 
@@ -71,13 +75,12 @@ const Services = () => {
           </motion.div>
 
           <h2 className="text-section-title mb-6">
-            Comprehensive AI Solutions
-            <span className="gradient-text block">for Every Business Need</span>
+            Intelligent Solutions
+            <span className="gradient-text block">for Every Industry</span>
           </h2>
 
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            From computer vision to natural language processing, we offer a complete suite of AI services 
-            designed to transform your business operations and drive innovation.
+            From industry-focused SaaS products to AI-powered automation, we build digital solutions that simplify operations, improve efficiency, and help businesses grow.
           </p>
         </motion.div>
 
@@ -133,15 +136,15 @@ const Services = () => {
                     className="mt-6 pt-6 border-t border-slate-700"
                     whileHover={{ x: 5 }}
                   >
-                    <button className="text-cyan-400 hover:text-cyan-300 font-medium flex items-center space-x-2 group-hover:underline">
-                      <span>Learn More</span>
+                    <Link href={service.href} className="text-cyan-400 hover:text-cyan-300 font-medium flex items-center space-x-2 group-hover:underline">
+                      <span>{service.cta}</span>
                       <motion.div
                         animate={{ x: [0, 5, 0] }}
                         transition={{ duration: 1.5, repeat: Infinity }}
                       >
                         →
                       </motion.div>
-                    </button>
+                    </Link>
                   </motion.div>
                 </div>
               </div>
