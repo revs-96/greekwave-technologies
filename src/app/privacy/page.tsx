@@ -189,9 +189,9 @@ export default function PrivacyPage() {
                     or our privacy practices, please contact us:
                   </p>
                   <div className="space-y-2">
-                    <p><strong>Email:</strong> privacy@greekwave.tech</p>
-                    <p><strong>Phone:</strong> +1 (555) 012-3456</p>
-                    <p><strong>Address:</strong> 123 Innovation Drive, San Francisco, CA 94105</p>
+                    <p><strong>Email:</strong> greekwavetech@zohomail.in</p>
+                    <p><strong>Phone:</strong> +91 8977094517</p>
+                    <p><strong>Address:</strong> Rajamahendravaram, India</p>
                   </div>
                   <p>
                     We will respond to your inquiry within 30 days of receipt.

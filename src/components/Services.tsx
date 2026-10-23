@@ -1,58 +1,10 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BookOpen, Heart, Landmark, ShoppingCart, Utensils } from 'lucide-react'
 import Link from 'next/link'
+import { industries as services } from '@/data/industries'
 
 const Services = () => {
-  const services = [
-    {
-      icon: Heart,
-      title: 'Healthcare & Medical',
-      description: 'Purpose-built healthcare software to help clinics and diagnostic centers manage daily operations efficiently.',
-      features: ['Clinic Management Systems', 'Diagnostic Center Workflows', 'Appointments & Patient Records', 'Healthcare Workflow Automation'],
-      color: 'from-pink-500 to-rose-500',
-      cta: 'Explore BioeLve',
-      href: '/services#healthcare-medical',
-    },
-    {
-      icon: BookOpen,
-      title: 'Education & EdTech',
-      description: 'Digital platforms that simplify educational administration and enhance learning experiences.',
-      features: ['Student & Course Management', 'Learning Management Systems', 'Administrative Automation', 'AI Learning Assistants'],
-      color: 'from-blue-500 to-cyan-500',
-      cta: 'Learn More',
-      href: '/services#education-edtech',
-    },
-    {
-      icon: Utensils,
-      title: 'Food, Restaurants & Hospitality',
-      description: 'Smart software to streamline hospitality operations and improve customer service.',
-      features: ['Restaurant Management', 'Reservations & Order Workflows', 'Inventory & Staff Management', 'Customer Service Automation'],
-      color: 'from-orange-500 to-amber-500',
-      cta: 'Learn More',
-      href: '/services#food-hospitality',
-    },
-    {
-      icon: ShoppingCart,
-      title: 'E-commerce & Digital Platforms',
-      description: 'Scalable digital solutions that simplify online selling and automate everyday operations.',
-      features: ['E-commerce Platform Development', 'Order & Inventory Management', 'AI Customer Support', 'Sales & Business Analytics'],
-      color: 'from-emerald-500 to-teal-500',
-      cta: 'Learn More',
-      href: '/services#ecommerce-platforms',
-    },
-    {
-      icon: Landmark,
-      title: 'Finance, Accounting & Insurance',
-      description: 'Intelligent tools that simplify financial workflows, document handling, and business reporting.',
-      features: ['Accounting Workflow Automation', 'Invoice & Document Processing', 'Financial Reports & Dashboards', 'Insurance Process Automation'],
-      color: 'from-violet-500 to-purple-500',
-      cta: 'Learn More',
-      href: '/services#finance-insurance',
-    },
-  ]
-
   return (
     <section id="services" className="section-padding bg-slate-900">
       <div className="container-custom">
@@ -136,7 +88,7 @@ const Services = () => {
                     className="mt-6 pt-6 border-t border-slate-700"
                     whileHover={{ x: 5 }}
                   >
-                    <Link href={service.href} className="text-cyan-400 hover:text-cyan-300 font-medium flex items-center space-x-2 group-hover:underline">
+                    <Link href={`/services#${service.id}`} className="text-cyan-400 hover:text-cyan-300 font-medium flex items-center space-x-2 group-hover:underline">
                       <span>{service.cta}</span>
                       <motion.div
                         animate={{ x: [0, 5, 0] }}
@@ -171,9 +123,9 @@ const Services = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <button className="btn-primary text-lg px-10 py-4">
+              <Link href="/contact" className="btn-primary inline-block text-lg px-10 py-4">
                 Schedule a Consultation
-              </button>
+              </Link>
             </motion.div>
           </div>
         </motion.div>

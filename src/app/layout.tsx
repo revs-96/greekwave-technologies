@@ -4,6 +4,9 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+const logo = `${basePath}/logo.png`
+
 const inter = Inter({ 
   subsets: ['latin'],
   variable: '--font-inter',
@@ -28,11 +31,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'GreekWave Technologies - Riding the Wave of AI Innovation',
     description: 'GreekWave Technologies builds innovative AI-based applications for businesses and consumers.',
-    url: 'https://greekwave.tech',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://greekwave.tech',
     siteName: 'GreekWave Technologies',
     images: [
       {
-        url: '/logo.png',
+        url: logo,
         width: 1200,
         height: 630,
         alt: 'GreekWave Technologies - AI Innovation',
@@ -45,12 +48,12 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'GreekWave Technologies - Riding the Wave of AI Innovation',
     description: 'GreekWave Technologies builds innovative AI-based applications for businesses and consumers.',
-    images: ['/logo.png'],
+    images: [logo],
   },
   icons: {
-    icon: '/logo.png',
-    shortcut: '/logo.png',
-    apple: '/logo.png',
+    icon: logo,
+    shortcut: logo,
+    apple: logo,
   },
   robots: {
     index: true,

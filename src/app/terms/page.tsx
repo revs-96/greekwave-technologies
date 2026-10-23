@@ -104,10 +104,10 @@ export default function TermsPage() {
     {
       title: 'Governing Law and Dispute Resolution',
       content: [
-        'These terms shall be governed by and construed in accordance with the laws of the State of California.',
+        'These terms shall be governed by and construed in accordance with the laws of India.',
         'Any disputes arising from these terms or your use of our services shall be resolved through binding arbitration.',
         'You waive any right to participate in class action lawsuits or class-wide arbitration.',
-        'The arbitration shall be conducted in San Francisco, California.',
+        'The arbitration shall be conducted in Rajamahendravaram, Andhra Pradesh, India.',
       ],
     },
     {
@@ -215,9 +215,9 @@ export default function TermsPage() {
                     If you have any questions about these Terms of Service, please contact us:
                   </p>
                   <div className="space-y-2">
-                    <p><strong>Email:</strong> legal@greekwave.tech</p>
-                    <p><strong>Phone:</strong> +1 (555) 012-3456</p>
-                    <p><strong>Address:</strong> 123 Innovation Drive, San Francisco, CA 94105</p>
+                    <p><strong>Email:</strong> greekwavetech@zohomail.in</p>
+                    <p><strong>Phone:</strong> +91 8977094517</p>
+                    <p><strong>Address:</strong> Rajamahendravaram, India</p>
                   </div>
                   <p>
                     We will respond to your inquiry within 5 business days.

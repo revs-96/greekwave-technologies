@@ -1,176 +1,87 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Eye, MessageSquare, TrendingUp, Cog, Brain, Zap, CheckCircle, ArrowRight } from 'lucide-react'
+import { Layers, Workflow, Bot, Network, FileText, BarChart3, CheckCircle, ArrowRight, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { industries } from '@/data/industries'
 
 export default function ServicesPage() {
   const services = [
     {
-      icon: Eye,
-      title: 'Computer Vision',
-      description: 'Advanced image and video analysis solutions that enable machines to see, understand, and interpret visual data with human-like accuracy.',
-      image: 'https://images.unsplash.com/photo-1555255707-c07966088b7b?w=600&h=400&fit=crop',
-      features: [
-        'Object Detection & Recognition',
-        'Facial Recognition Systems',
-        'Quality Control Automation',
-        'Medical Image Analysis',
-        'Autonomous Vehicle Vision',
-        'Augmented Reality Integration',
-      ],
-      useCases: [
-        'Manufacturing quality control',
-        'Security and surveillance',
-        'Healthcare diagnostics',
-        'Retail analytics',
-      ],
-      technologies: ['OpenCV', 'TensorFlow', 'PyTorch', 'YOLO', 'ResNet'],
+      icon: Layers,
+      title: 'SaaS Product Development',
+      description: 'End-to-end design and development of web-based SaaS products, from the first prototype to a secure, scalable platform.',
+      features: ['Custom web applications', 'Multi-user & role-based access', 'Admin portals & dashboards', 'Cloud hosting & deployment'],
       color: 'from-blue-500 to-cyan-500',
     },
     {
-      icon: MessageSquare,
-      title: 'Natural Language Processing',
-      description: 'Intelligent text analysis and language understanding systems that enable machines to comprehend, interpret, and generate human language.',
-      image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&h=400&fit=crop',
-      features: [
-        'Sentiment Analysis',
-        'Chatbots & Virtual Assistants',
-        'Text Classification',
-        'Language Translation',
-        'Document Processing',
-        'Voice Recognition',
-      ],
-      useCases: [
-        'Customer service automation',
-        'Content moderation',
-        'Document analysis',
-        'Voice assistants',
-      ],
-      technologies: ['BERT', 'GPT', 'spaCy', 'NLTK', 'Transformers'],
-      color: 'from-purple-500 to-pink-500',
+      icon: Workflow,
+      title: 'AI-Powered Workflow Automation',
+      description: 'Automate repetitive, rule-based work so your team can focus on customers and decisions that matter.',
+      features: ['Business process automation', 'Approvals & notifications', 'System & API integrations', 'Scheduled tasks & reports'],
+      color: 'from-orange-500 to-amber-500',
     },
     {
-      icon: TrendingUp,
-      title: 'Predictive Analytics',
-      description: 'Data-driven insights and forecasting models that help businesses make informed decisions and optimize operations for better outcomes.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-      features: [
-        'Demand Forecasting',
-        'Risk Assessment',
-        'Customer Analytics',
-        'Market Trend Analysis',
-        'Predictive Maintenance',
-        'Financial Modeling',
-      ],
-      useCases: [
-        'Supply chain optimization',
-        'Financial risk management',
-        'Customer behavior prediction',
-        'Equipment maintenance',
-      ],
-      technologies: ['Scikit-learn', 'XGBoost', 'Prophet', 'Apache Spark', 'R'],
-      color: 'from-green-500 to-emerald-500',
+      icon: Bot,
+      title: 'AI Assistants & Chatbots',
+      description: 'Conversational assistants that answer customer and staff questions using your own approved information.',
+      features: ['Customer support assistants', 'Internal knowledge assistants', 'Website & WhatsApp chatbots', 'Hand-off to a human when needed'],
+      color: 'from-emerald-500 to-teal-500',
     },
     {
-      icon: Cog,
-      title: 'Automation Systems',
-      description: 'Intelligent automation solutions that streamline workflows, reduce manual tasks, and increase operational efficiency across industries.',
-      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop',
-      features: [
-        'Process Automation',
-        'Workflow Optimization',
-        'Smart Scheduling',
-        'Resource Management',
-        'Robotic Process Automation',
-        'IoT Integration',
-      ],
-      useCases: [
-        'Manufacturing automation',
-        'Business process optimization',
-        'Smart building management',
-        'Supply chain automation',
-      ],
-      technologies: ['UiPath', 'Blue Prism', 'Automation Anywhere', 'Python', 'Node.js'],
-      color: 'from-orange-500 to-red-500',
+      icon: Network,
+      title: 'Agentic AI & MCP Integrations',
+      description: 'AI agents that plan tasks and act across your business tools, with controlled permissions and human approval.',
+      features: ['Multi-agent workflows', 'Tool calling & API actions', 'Model Context Protocol (MCP) servers', 'Audit logs & human-in-the-loop'],
+      color: 'from-violet-500 to-purple-500',
     },
     {
-      icon: Brain,
-      title: 'Machine Learning',
-      description: 'Custom ML models and algorithms tailored to your specific business needs, enabling data-driven decision making and intelligent automation.',
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop',
-      features: [
-        'Custom Model Development',
-        'Deep Learning Solutions',
-        'Neural Network Design',
-        'Algorithm Optimization',
-        'Model Training & Deployment',
-        'Performance Monitoring',
-      ],
-      useCases: [
-        'Recommendation systems',
-        'Fraud detection',
-        'Image classification',
-        'Time series analysis',
-      ],
-      technologies: ['TensorFlow', 'PyTorch', 'Keras', 'MLflow', 'Kubeflow'],
-      color: 'from-indigo-500 to-purple-500',
+      icon: FileText,
+      title: 'Document Intelligence',
+      description: 'Turn invoices, forms and reports into structured data, and find answers across your documents in seconds.',
+      features: ['OCR & data extraction', 'Document classification', 'Search across documents (RAG)', 'Source-backed answers'],
+      color: 'from-pink-500 to-rose-500',
     },
     {
-      icon: Zap,
-      title: 'AI Integration',
-      description: 'Seamless integration of AI capabilities into existing systems and applications, ensuring smooth deployment and optimal performance.',
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
-      features: [
-        'API Development',
-        'System Integration',
-        'Cloud Deployment',
-        'Performance Optimization',
-        'Legacy System Modernization',
-        'Scalability Solutions',
-      ],
-      useCases: [
-        'Enterprise system integration',
-        'Cloud migration',
-        'API development',
-        'Performance optimization',
-      ],
-      technologies: ['Docker', 'Kubernetes', 'AWS', 'Azure', 'GCP'],
-      color: 'from-yellow-500 to-orange-500',
+      icon: BarChart3,
+      title: 'Analytics & Dashboards',
+      description: 'Clear, real-time views of your operations so you can track performance and act on what the data shows.',
+      features: ['Business KPI dashboards', 'Automated reports', 'Sales & operations analytics', 'Data integration'],
+      color: 'from-sky-500 to-indigo-500',
     },
   ]
 
   const process = [
     {
       step: '01',
-      title: 'Discovery & Analysis',
-      description: 'We analyze your business needs, data, and objectives to design the perfect AI solution.',
+      title: 'Discovery',
+      description: 'We learn how your business works today and identify where software and automation will have the most impact.',
     },
     {
       step: '02',
-      title: 'Strategy & Planning',
-      description: 'We create a comprehensive roadmap and technical architecture for your AI implementation.',
+      title: 'Planning & Design',
+      description: 'We define the scope, user flows and technical architecture, and agree on a clear delivery plan.',
     },
     {
       step: '03',
-      title: 'Development & Training',
-      description: 'Our experts develop and train custom AI models using your data and requirements.',
+      title: 'Development',
+      description: 'We build in short iterations and share working versions regularly so you can give feedback early.',
     },
     {
       step: '04',
-      title: 'Testing & Validation',
-      description: 'Rigorous testing ensures your AI solution meets performance and accuracy standards.',
+      title: 'Testing',
+      description: 'Every release is tested for functionality, security and performance before it reaches your users.',
     },
     {
       step: '05',
-      title: 'Deployment & Integration',
-      description: 'We seamlessly integrate the AI solution into your existing systems and workflows.',
+      title: 'Launch & Training',
+      description: 'We deploy the solution, integrate it with your existing tools and help your team get comfortable with it.',
     },
     {
       step: '06',
-      title: 'Monitoring & Support',
-      description: 'Ongoing monitoring and support ensure optimal performance and continuous improvement.',
+      title: 'Support & Improvement',
+      description: 'Ongoing maintenance, updates and new features as your business grows.',
     },
   ]
 
@@ -187,29 +98,118 @@ export default function ServicesPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-hero mb-6">
-              AI Services &
-              <span className="gradient-text block">Solutions</span>
+              Our Services &
+              <span className="gradient-text block">Industries We Serve</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-              Comprehensive AI solutions designed to transform your business operations, 
-              enhance decision-making, and drive sustainable growth across all industries.
+              We build SaaS products and AI-powered automation that simplify operations,
+              improve productivity and help businesses grow with confidence.
             </p>
+            <div className="mt-10 flex flex-wrap justify-center gap-3">
+              {industries.map((industry) => (
+                <a
+                  key={industry.id}
+                  href={`#${industry.id}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-600 bg-slate-800/60 px-4 py-2 text-sm text-gray-300 transition-colors hover:border-cyan-400 hover:text-cyan-400"
+                >
+                  <industry.icon className="h-4 w-4" />
+                  {industry.title}
+                </a>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="section-padding bg-slate-800/50">
+      {/* What We Build */}
+      <section className="section-padding bg-slate-900">
         <div className="container-custom">
-          <div className="space-y-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-block bg-cyan-400/10 border border-cyan-400/30 rounded-full px-4 py-2 mb-6">
+              <span className="text-cyan-400 font-medium">What We Build</span>
+            </div>
+            <h2 className="text-section-title mb-6">
+              Software & AI Services
+              <span className="gradient-text block">Tailored to Your Business</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Whether you need a complete product or want to add intelligence to the tools you already use,
+              we deliver solutions that fit the way you work.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="card h-full group hover:border-cyan-400/60 transition-colors duration-300"
+              >
+                <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${service.color} mb-6`}>
+                  <service.icon className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-gray-400 mb-6 leading-relaxed">
+                  {service.description}
+                </p>
+                <ul className="space-y-2">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-center space-x-2">
+                      <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full flex-shrink-0" />
+                      <span className="text-sm text-gray-300">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries We Serve */}
+      <section className="section-padding bg-slate-800/50">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-block bg-cyan-400/10 border border-cyan-400/30 rounded-full px-4 py-2 mb-6">
+              <span className="text-cyan-400 font-medium">Industries We Serve</span>
+            </div>
+            <h2 className="text-section-title mb-6">
+              Solutions Built
+              <span className="gradient-text block">for Your Industry</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              We combine our software and AI expertise with an understanding of each industry&apos;s
+              day-to-day challenges.
+            </p>
+          </motion.div>
+
+          <div className="space-y-20">
+            {industries.map((industry, index) => (
+              <motion.div
+                key={industry.id}
+                id={industry.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
+                transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
+                className={`scroll-mt-28 grid lg:grid-cols-2 gap-12 items-center ${
                   index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
                 }`}
               >
@@ -217,18 +217,18 @@ export default function ServicesPage() {
                 <div className={`relative ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                   <div className="relative overflow-hidden rounded-2xl">
                     <Image
-                      src={service.image}
-                      alt={service.title}
-                      width={600}
-                      height={400}
+                      src={industry.image}
+                      alt={industry.title}
+                      width={1000}
+                      height={700}
                       className="w-full h-80 object-cover"
                     />
-                    <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-20`} />
-                    
+                    <div className={`absolute inset-0 bg-gradient-to-br ${industry.color} opacity-20`} />
+
                     {/* Icon Overlay */}
                     <div className="absolute top-6 left-6">
-                      <div className={`p-4 bg-gradient-to-br ${service.color} rounded-xl`}>
-                        <service.icon className="h-8 w-8 text-white" />
+                      <div className={`p-4 bg-gradient-to-br ${industry.color} rounded-xl`}>
+                        <industry.icon className="h-8 w-8 text-white" />
                       </div>
                     </div>
                   </div>
@@ -236,53 +236,29 @@ export default function ServicesPage() {
 
                 {/* Content */}
                 <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
+                  {industry.product && (
+                    <div className="inline-flex items-center gap-2 rounded-full bg-cyan-400/10 border border-cyan-400/30 px-3 py-1 mb-4">
+                      <Sparkles className="h-4 w-4 text-cyan-400" />
+                      <span className="text-sm font-medium text-cyan-400">Featured product: {industry.product}</span>
+                    </div>
+                  )}
                   <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-                    {service.title}
+                    {industry.title}
                   </h2>
 
                   <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                    {service.description}
+                    {industry.overview}
                   </p>
 
-                  {/* Features */}
+                  {/* Solutions */}
                   <div className="mb-8">
-                    <h3 className="text-xl font-semibold mb-4 text-white">Key Features</h3>
+                    <h3 className="text-xl font-semibold mb-4 text-white">What We Offer</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {service.features.map((feature) => (
-                        <div key={feature} className="flex items-center space-x-2">
+                      {industry.solutions.map((solution) => (
+                        <div key={solution} className="flex items-center space-x-2">
                           <CheckCircle className="h-5 w-5 text-cyan-400 flex-shrink-0" />
-                          <span className="text-gray-300">{feature}</span>
+                          <span className="text-gray-300">{solution}</span>
                         </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Use Cases */}
-                  <div className="mb-8">
-                    <h3 className="text-xl font-semibold mb-4 text-white">Use Cases</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {service.useCases.map((useCase) => (
-                        <span
-                          key={useCase}
-                          className="bg-slate-700/50 text-gray-300 px-3 py-1 rounded-full text-sm"
-                        >
-                          {useCase}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Technologies */}
-                  <div className="mb-8">
-                    <h3 className="text-xl font-semibold mb-4 text-white">Technologies</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {service.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className={`bg-gradient-to-r ${service.color} text-white px-3 py-1 rounded-full text-sm font-medium`}
-                        >
-                          {tech}
-                        </span>
                       ))}
                     </div>
                   </div>
@@ -292,7 +268,7 @@ export default function ServicesPage() {
                     href="/contact"
                     className="inline-flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 font-medium text-lg group"
                   >
-                    <span>Learn More</span>
+                    <span>{industry.product ? `Request a ${industry.product} Demo` : 'Discuss Your Project'}</span>
                     <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -313,12 +289,12 @@ export default function ServicesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-section-title mb-6">
-              Our AI Development
-              <span className="gradient-text block">Process</span>
+              How We
+              <span className="gradient-text block">Work With You</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              We follow a proven methodology to ensure successful AI implementation 
-              that delivers measurable results for your business.
+              A simple, transparent process that keeps you involved from the first conversation
+              to long-term support.
             </p>
           </motion.div>
 
@@ -341,11 +317,6 @@ export default function ServicesPage() {
                 <p className="text-gray-400 leading-relaxed">
                   {step.description}
                 </p>
-                
-                {/* Connection Line */}
-                {index < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-cyan-400 to-transparent" />
-                )}
               </motion.div>
             ))}
           </div>
@@ -363,11 +334,11 @@ export default function ServicesPage() {
             className="text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Transform Your Business with AI?
+              Don&apos;t See Your Industry Listed?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Let's discuss how our AI solutions can address your specific challenges 
-              and drive measurable results for your organization.
+              We work with businesses of all kinds. Tell us about your challenges and we&apos;ll
+              show you how software and AI can help.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               <motion.div

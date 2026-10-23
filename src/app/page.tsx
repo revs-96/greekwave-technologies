@@ -6,7 +6,6 @@ import About from '@/components/About'
 import Services from '@/components/Services'
 import CaseStudies from '@/components/CaseStudies'
 import Testimonials from '@/components/Testimonials'
-import Blog from '@/components/Blog'
 import CTA from '@/components/CTA'
 
 export default function Home() {
@@ -17,7 +16,6 @@ export default function Home() {
       <Services />
       <CaseStudies />
       <Testimonials />
-      <Blog />
       <CTA />
     </div>
   )

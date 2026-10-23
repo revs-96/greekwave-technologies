@@ -90,7 +90,7 @@ src/
    SMTP_USER=your-email@gmail.com
    SMTP_PASS=your-app-password
    SMTP_FROM=noreply@greekwave.tech
-   CONTACT_EMAIL=hello@greekwave.tech
+   CONTACT_EMAIL=greekwavetech@zohomail.in
    ```
 
 4. **Run the development server**
@@ -229,8 +229,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For support and questions:
-- Email: hello@greekwave.tech
-- Phone: +1 (555) 012-3456
+- Email: greekwavetech@zohomail.in
+- Phone: +91 8977094517
 - Website: [greekwave.tech](https://greekwave.tech)
 
 ## 🙏 Acknowledgments

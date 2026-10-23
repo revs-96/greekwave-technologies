@@ -40,79 +40,19 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: 'Dr. Alexandra Petrov',
-      position: 'CEO & Co-Founder',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face',
-      bio: 'Former AI researcher at MIT with 15+ years of experience in machine learning and computer vision.',
-      linkedin: '#',
-    },
-    {
-      name: 'Michael Chen',
-      position: 'CTO & Co-Founder',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
-      bio: 'Ex-Google AI engineer specializing in natural language processing and deep learning architectures.',
-      linkedin: '#',
-    },
-    {
-      name: 'Dr. Sarah Kim',
-      position: 'Head of Research',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face',
-      bio: 'PhD in Computer Science from Stanford, expert in predictive analytics and AI ethics.',
-      linkedin: '#',
-    },
-    {
-      name: 'David Rodriguez',
-      position: 'VP of Engineering',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face',
-      bio: 'Full-stack engineer with expertise in AI system architecture and cloud deployment.',
-      linkedin: '#',
-    },
-    {
-      name: 'Emily Johnson',
-      position: 'Head of Business Development',
-      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop&crop=face',
-      bio: 'MBA from Wharton, specializes in AI strategy and business transformation.',
-      linkedin: '#',
-    },
-    {
-      name: 'Dr. Robert Wang',
-      position: 'Senior Data Scientist',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=face',
-      bio: 'PhD in Statistics, expert in machine learning algorithms and data analysis.',
-      linkedin: '#',
+      name: 'Eswara Venkata Sai Raja',
+      position: 'Founder & CEO',
+      image: '/team/eswara.png',
+      bio: 'Founded GreekWave Technologies to build SaaS products and AI-powered automation that help businesses simplify operations and grow.',
+      linkedin: 'https://www.linkedin.com/in/eswara-venkata-sai-raja-30nov',
     },
   ]
 
   const milestones = [
     {
-      year: '2019',
+      year: '2026',
       title: 'Company Founded',
-      description: 'GreekWave Technologies was established with a vision to democratize AI.',
-    },
-    {
-      year: '2020',
-      title: 'First Major Client',
-      description: 'Secured our first enterprise client and delivered our first AI solution.',
-    },
-    {
-      year: '2021',
-      title: 'Series A Funding',
-      description: 'Raised $5M in Series A funding to expand our team and capabilities.',
-    },
-    {
-      year: '2022',
-      title: '50+ Projects',
-      description: 'Successfully delivered over 50 AI projects across various industries.',
-    },
-    {
-      year: '2023',
-      title: 'International Expansion',
-      description: 'Expanded operations to serve clients across North America and Europe.',
-    },
-    {
-      year: '2024',
-      title: 'AI Innovation Award',
-      description: 'Recognized as the "Most Innovative AI Company" by TechCrunch.',
+      description: 'GreekWave Technologies was founded to build intelligent software and AI-powered automation for growing businesses.',
     },
   ]
 
@@ -252,16 +192,16 @@ export default function AboutPage() {
             className="text-center mb-16"
           >
             <h2 className="text-section-title mb-6">
-              Meet Our
-              <span className="gradient-text block">Expert Team</span>
+              Meet the
+              <span className="gradient-text block">Founder</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Our diverse team of AI experts, engineers, and researchers brings together 
-              decades of experience from leading tech companies and research institutions.
+              The person behind GreekWave Technologies and its mission to make
+              intelligent software accessible to every business.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {team.map((member, index) => (
               <motion.div
                 key={member.name}
@@ -269,7 +209,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="card text-center hover:scale-105 transition-transform duration-300"
+                className="card w-full max-w-sm text-center hover:scale-105 transition-transform duration-300"
               >
                 <div className="relative mb-6">
                   <Image
@@ -292,6 +232,8 @@ export default function AboutPage() {
                 </p>
                 <a
                   href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-medium"
                 >
                   Connect on LinkedIn →
@@ -317,8 +259,7 @@ export default function AboutPage() {
               <span className="gradient-text block">Journey</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              From a small startup to a leading AI technology company, 
-              here are the key milestones in our journey.
+              Every journey starts with a first step. Here is where ours began.
             </p>
           </motion.div>
 

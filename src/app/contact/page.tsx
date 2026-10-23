@@ -28,15 +28,36 @@ export default function ContactPage() {
     setIsSubmitting(true)
     
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
+      // The site is a static export, so there is no server to send email.
+      // With a form service endpoint (e.g. Formspree) configured, post to it;
+      // otherwise open the visitor's email app with the message pre-filled.
+      const endpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT
+      let ok = true
 
-      if (response.ok) {
+      if (endpoint) {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify(formData),
+        })
+        ok = response.ok
+      } else {
+        const body = [
+          `Name: ${formData.name}`,
+          `Email: ${formData.email}`,
+          formData.company && `Company: ${formData.company}`,
+          formData.phone && `Phone: ${formData.phone}`,
+          formData.service && `Service of Interest: ${formData.service}`,
+          '',
+          formData.message,
+        ].filter((line) => line !== '' && line !== undefined).join('\n')
+        window.location.href = `mailto:greekwavetech@zohomail.in?subject=${encodeURIComponent(`New enquiry from ${formData.name}`)}&body=${encodeURIComponent(body)}`
+      }
+
+      if (ok) {
         setIsSubmitted(true)
         // Reset form after 3 seconds
         setTimeout(() => {
@@ -65,41 +86,41 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'hello@greekwave.tech',
+      details: 'greekwavetech@zohomail.in',
       description: 'Send us an email and we\'ll respond within 24 hours',
-      href: 'mailto:hello@greekwave.tech',
+      href: 'mailto:greekwavetech@zohomail.in',
     },
     {
       icon: Phone,
       title: 'Call Us',
-      details: '+1 (555) 012-3456',
+      details: '+91 8977094517',
       description: 'Speak directly with our AI experts',
-      href: 'tel:+1-555-0123',
+      href: 'tel:+918977094517',
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: '123 Innovation Drive, San Francisco, CA 94105',
-      description: 'Our headquarters in the heart of Silicon Valley',
-      href: 'https://maps.google.com',
+      details: 'Rajamahendravaram, India',
+      description: 'Our office in Rajamahendravaram, Andhra Pradesh',
+      href: 'https://www.google.com/maps/search/?api=1&query=Rajamahendravaram%2C+Andhra+Pradesh%2C+India',
     },
     {
       icon: Clock,
       title: 'Office Hours',
-      details: 'Monday - Friday: 9AM - 6PM EST',
+      details: 'Monday - Friday: 9AM - 6PM IST',
       description: 'We\'re here to help during business hours',
       href: null,
     },
   ]
 
   const services = [
-    'Computer Vision',
-    'Natural Language Processing',
-    'Predictive Analytics',
-    'Automation Systems',
-    'Machine Learning',
-    'AI Integration',
-    'AI Consulting',
+    'SaaS Product Development',
+    'AI-Powered Workflow Automation',
+    'AI Assistants & Chatbots',
+    'Agentic AI & MCP Integrations',
+    'Document Intelligence',
+    'Analytics & Dashboards',
+    'BioeLve (Healthcare)',
     'Other',
   ]
 
@@ -218,7 +239,7 @@ export default function ContactPage() {
                           value={formData.phone}
                           onChange={handleChange}
                           className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 transition-colors"
-                          placeholder="+1 (555) 123-4567"
+                          placeholder="+91 98765 43210"
                         />
                       </div>
                     </div>
@@ -353,7 +374,7 @@ export default function ContactPage() {
                     <MapPin className="h-12 w-12 text-cyan-400 mx-auto mb-4" />
                     <p className="text-gray-400">Interactive Map</p>
                     <p className="text-sm text-gray-500">
-                      San Francisco, CA
+                      Rajamahendravaram, India
                     </p>
                   </div>
                 </div>

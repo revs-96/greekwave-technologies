@@ -27,7 +27,7 @@ const CTA = () => {
       title: 'Call Us',
       description: 'Speak directly with our AI experts',
       action: 'Call Now',
-      href: 'tel:+1-555-0123',
+      href: 'tel:+918977094517',
       color: 'from-green-500 to-emerald-500',
     },
   ]
@@ -171,25 +171,25 @@ const CTA = () => {
               <div>
                 <div className="text-cyan-400 font-semibold mb-2">Email Us</div>
                 <a 
-                  href="mailto:hello@greekwave.tech" 
+                  href="mailto:greekwavetech@zohomail.in" 
                   className="text-gray-300 hover:text-cyan-400 transition-colors"
                 >
-                  hello@greekwave.tech
+                  greekwavetech@zohomail.in
                 </a>
               </div>
               <div>
                 <div className="text-cyan-400 font-semibold mb-2">Call Us</div>
                 <a 
-                  href="tel:+1-555-0123" 
+                  href="tel:+918977094517" 
                   className="text-gray-300 hover:text-cyan-400 transition-colors"
                 >
-                  +1 (555) 012-3456
+                  +91 8977094517
                 </a>
               </div>
               <div>
                 <div className="text-cyan-400 font-semibold mb-2">Office Hours</div>
                 <div className="text-gray-300">
-                  Mon-Fri: 9AM-6PM EST
+                  Mon-Fri: 9AM-6PM IST
                 </div>
               </div>
             </div>

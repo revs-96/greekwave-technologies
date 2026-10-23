@@ -9,17 +9,17 @@ const Footer = () => {
   const footerLinks = {
     company: [
       { name: 'About Us', href: '/about' },
-      { name: 'Our Team', href: '/team' },
+      { name: 'Our Team', href: '/about' },
       { name: 'Careers', href: '/careers' },
       { name: 'Press', href: '/press' },
       { name: 'Contact', href: '/contact' },
     ],
     services: [
-      { name: 'Computer Vision', href: '/services/computer-vision' },
-      { name: 'NLP Solutions', href: '/services/nlp' },
-      { name: 'Predictive Analytics', href: '/services/analytics' },
-      { name: 'Automation Systems', href: '/services/automation' },
-      { name: 'AI Consulting', href: '/services/consulting' },
+      { name: 'Healthcare & Medical', href: '/services#healthcare-medical' },
+      { name: 'Education & EdTech', href: '/services#education-edtech' },
+      { name: 'Food & Hospitality', href: '/services#food-hospitality' },
+      { name: 'E-commerce', href: '/services#ecommerce-platforms' },
+      { name: 'Finance & Insurance', href: '/services#finance-insurance' },
     ],
     resources: [
       { name: 'Insights', href: '/insights' },
@@ -95,24 +95,24 @@ const Footer = () => {
                   <div className="flex items-center space-x-3 text-gray-400">
                     <Mail className="h-5 w-5 text-cyan-400" />
                     <a 
-                      href="mailto:hello@greekwave.tech" 
+                      href="mailto:greekwavetech@zohomail.in" 
                       className="hover:text-cyan-400 transition-colors"
                     >
-                      hello@greekwave.tech
+                      greekwavetech@zohomail.in
                     </a>
                   </div>
                   <div className="flex items-center space-x-3 text-gray-400">
                     <Phone className="h-5 w-5 text-cyan-400" />
                     <a 
-                      href="tel:+1-555-0123" 
+                      href="tel:+918977094517" 
                       className="hover:text-cyan-400 transition-colors"
                     >
-                      +1 (555) 012-3456
+                      +91 8977094517
                     </a>
                   </div>
                   <div className="flex items-center space-x-3 text-gray-400">
                     <MapPin className="h-5 w-5 text-cyan-400" />
-                    <span>San Francisco, CA</span>
+                    <span>Rajamahendravaram, India</span>
                   </div>
                 </div>
               </motion.div>
